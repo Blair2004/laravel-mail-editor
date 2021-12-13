@@ -50,6 +50,34 @@ Publish configuration file and public assets:
 php artisan laravel-mail-editor:install
 ```
 
+## Accessing The Dashboard
+After installating MailEclips, you'll probably need to configure the path that expose the dashboard created by the package. You can refer to the configuration file `/config/maileclipse.php` that is created when you publish the configuration file. By default, the path is "maileclipse". If your Laravel installation is `https://yourdomain.com`, the panel is therefore accessible at `https://yourdomain.com/maileclipse`.
+
+If you want to be able to define a custom path just by editing your .env file, you can save here a custom environment value like so :
+
+```php
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | MailEclipse Path
+    |--------------------------------------------------------------------------
+    |
+    | This is the URL where you can access mailEclipse
+    |
+    */
+
+    'path' => env( 'MAILECLIPSE_PATH', 'maileclipse' ),
+```
+
+On your .env file you'll just have to do this :
+
+```
+MAILECLIPSE_PATH="my-mail-dashboard"
+```
+
 ## Documentation
 
 ### !!NOTE!! Maileclipse website is currently down, please check this youtube video (from author) for usage:
